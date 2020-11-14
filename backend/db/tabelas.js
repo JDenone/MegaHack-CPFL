@@ -1,4 +1,5 @@
 module.exports = {
   clientes: "clientes",
-  historico: "historico"
+  historico: "historico",
+  extrato: "extrato"
 };

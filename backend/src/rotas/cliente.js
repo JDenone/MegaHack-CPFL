@@ -27,4 +27,14 @@ rota.route("/:cpf/historico").get(async (req, res) => {
   res.json({ ...historico });
 });
 
+rota.route("/:cpf/extrato").get(async (req, res) => {
+  const { cpf } = req.params;
+  const extrato = await knex
+    .select()
+    .table(TABELAS.extrato)
+    .where({ cpf_cliente: cpf })
+    .orderBy("data", "desc");
+  res.json({ ...extrato });
+});
+
 module.exports = rota;

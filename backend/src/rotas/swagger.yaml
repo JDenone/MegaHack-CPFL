@@ -57,6 +57,26 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/Historico"
+  /clientes/{cpf}/extrato:
+    get:
+      summary: Consulta extrato por CPF
+      description: Consulta o extrato de faturas por CPF.
+      parameters:
+        - name: cpf
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "200":
+          description: JSON de extrato
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Extrato"
 components:
   schemas:
     Cliente:
@@ -102,4 +122,28 @@ components:
           type: number
         pago:
           type: boolean
-      description: Dados do Cliente
+      description: Historico do Cliente
+    Extrato:
+      title: Extrato
+      type: object
+      properties:
+        cpf_cliente:
+          type: integer
+          format: int64
+        descricao:
+          type: string
+        valor:
+          type: number
+          format: double
+        operacao:
+          type: string
+          enum:
+            - ADD
+            - SUB
+        data:
+          type: string
+          format: date-time
+        criado_em:
+          type: string
+          format: date-time
+      description: Extrato do Cliente
