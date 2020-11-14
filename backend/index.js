@@ -8,6 +8,8 @@ const rotaCliente = require("./src/rotas/cliente");
 const PORT = process.env.PORT || 8080;
 const app = express();
 
+app.use("/clientes", rotaCliente);
+
 app.use(
   "/",
   swaggerUi.serve,
@@ -15,7 +17,6 @@ app.use(
     explorer: true
   })
 );
-app.use("/clientes", rotaCliente);
 
 app.listen(PORT, () => {
   console.log(`running on port ${PORT}`);
