@@ -1,6 +1,29 @@
 {
   "name": "backend",
-  "version": "1.0.0",
+  "version": "0.1.0",
+  "license": "MIT",
   "main": "index.js",
-  "license": "MIT"
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JDenone/MegaHack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JDenone/MegaHack/issues"
+  },
+  "homepage": "https://github.com/JDenone/MegaHack#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "knex": "^0.21.12",
+    "sqlite3": "^5.0.0",
+    "swagger-ui-express": "^4.1.4",
+    "yamljs": "^0.3.0"
+  }
 }

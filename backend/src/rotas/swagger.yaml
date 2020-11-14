@@ -1,0 +1,70 @@
+openapi: 3.0.0
+info:
+  title: API
+  version: 0.0.1
+servers:
+  - url: http://localhost:8080
+    description: API de desenvolvimento MegaHack
+paths:
+  /clientes:
+    get:
+      summary: Lista de clientes
+      description: Consulta a lista de clientes cadastrados.
+      responses:
+        "200":
+          description: JSON array de clientes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+  /clientes/{cpf}:
+    get:
+      summary: Consulta cliente por CPF
+      description: Consulta um cliente por CPF.
+      parameters:
+        - name: cpf
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "200":
+          description: JSON de cliente
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Cliente"
+components:
+  schemas:
+    Cliente:
+      title: Cliente
+      type: object
+      properties:
+        cpf:
+          type: integer
+          format: int64
+        nome:
+          type: string
+        email:
+          type: string
+        cep:
+          type: integer
+          format: int64
+        cidade:
+          type: string
+        uf:
+          type: string
+        saldo_valor:
+          type: number
+        saldo_cota:
+          type: number
+        cota_contratada:
+          type: boolean
+        cota_media_kw:
+          type: number
+        cota_media_vl:
+          type: number
+      description: Dados do Cliente
