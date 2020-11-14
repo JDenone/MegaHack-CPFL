@@ -1,10 +1,12 @@
+const TABELAS = require("../../tabelas");
+
 exports.seed = function (knex) {
   // Deletes ALL existing entries
-  return knex("clientes")
+  return knex(TABELAS.clientes)
     .del()
     .then(function () {
       // Inserts seed entries
-      return knex("clientes").insert([
+      return knex(TABELAS.clientes).insert([
         {
           cpf: "04603590705",
           nome: "Jessica Monteiro da Silva",
