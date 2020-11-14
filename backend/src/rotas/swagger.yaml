@@ -37,6 +37,26 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Cliente"
+  /clientes/{cpf}/historico:
+    get:
+      summary: Consulta historico por CPF
+      description: Consulta o historico de faturas por CPF.
+      parameters:
+        - name: cpf
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "200":
+          description: JSON de historico
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Historico"
 components:
   schemas:
     Cliente:
@@ -67,4 +87,19 @@ components:
           type: number
         cota_media_vl:
           type: number
+      description: Dados do Cliente
+    Historico:
+      title: Historico
+      type: object
+      properties:
+        cpf_cliente:
+          type: integer
+          format: int64
+        competencia:
+          type: integer
+          format: int64
+        valor:
+          type: number
+        pago:
+          type: boolean
       description: Dados do Cliente
