@@ -1,7 +1,7 @@
 exports.up = function (knex, Promise) {
   return knex.schema.createTable("clientes", (t) => {
     t.increments("id");
-    t.string("cpf");
+    t.string("cpf").unique();
     t.string("nome");
     t.string("email");
     t.bigInteger("cep");

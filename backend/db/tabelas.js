@@ -1,5 +1,6 @@
 module.exports = {
   clientes: "clientes",
   historico: "historico",
-  extrato: "extrato"
+  extrato: "extrato",
+  aparelhos: "aparelhos"
 };

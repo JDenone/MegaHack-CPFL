@@ -12,10 +12,10 @@ exports.up = function (knex) {
     t.datetime("data");
     t.timestamp("criado_em").defaultTo(knex.fn.now());
 
-    t.foreign("cpf_cliente").references(`${TABELAS.extrato}.cpf`);
+    t.foreign("cpf_cliente").references(`${TABELAS.clientes}.cpf`);
   });
 };
 
 exports.down = function (knex) {
-  return knex.schema.dropTable(TABELAS.historico);
+  return knex.schema.dropTable(TABELAS.extrato);
 };
