@@ -8,6 +8,3 @@ Solução criada durante o MegaHack 5.0 da Shawee. Reactjs, Nodejs e Javascript
 
 
 [Veja o vídeo curto que criamos para demonstrar a solução](https://youtu.be/sAyZkXu1jY4)
-
-
-Clique <a href="./hackatons.md">aqui</a> para dar uma olhada nos próximos hackathons ;)
