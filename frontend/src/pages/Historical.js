@@ -2,6 +2,8 @@ import React from 'react';
 
 import '../styles/pages/historical.css';
 
+const handleSign = alert("Pacote assinado com sucesso.");
+
 function Historical() {
   return (
     <div className="invoice-container">
@@ -47,6 +49,7 @@ function Historical() {
     
     <button
       className="button"
+      onClick={handleSign}
     >
       Assinar
     </button>
